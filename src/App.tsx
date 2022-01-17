@@ -1,3 +1,5 @@
-export const App = () => {
-  return null;
+const App = () => {
+	return null;
 };
+
+export default App;
