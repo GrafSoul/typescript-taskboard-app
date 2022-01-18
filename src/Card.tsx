@@ -1,7 +1,7 @@
 // Core
 import { FC } from 'react';
 
-// Components
+// Styled Components
 import { CardContainer } from 'styles';
 
 type CardProps = {
@@ -11,5 +11,3 @@ type CardProps = {
 export const Card: FC<CardProps> = ({ text }: CardProps) => {
 	return <CardContainer>{text}</CardContainer>;
 };
-
-export default Card;

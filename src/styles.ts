@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type AddItemButtonProps = {
+	dark?: boolean;
+};
+
 export const AppContainer = styled.div`
 	width: 100%;
 	height: 100%;
@@ -33,4 +37,48 @@ export const CardContainer = styled.div`
 	background-color: #fff;
 	box-shadow: #091e4240 0px 1px 0px 0px;
 	cursor: pointer;
+`;
+
+export const AddItemButton = styled.button<AddItemButtonProps>`
+	width: 100%;
+	max-width: 300px;
+	padding: 10px 12px;
+	background-color: #ffffff3d;
+	border-radius: 3px;
+	border: none;
+	color: ${props => (props.dark ? '#000' : '#fff')};
+	cursor: pointer;
+	text-align: left;
+	transition: background 85ms ease-in;
+
+	&:hover {
+		background-color: #ffffff52;
+	}
+`;
+
+export const NewItemFormContainer = styled.div`
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+`;
+
+export const NewItemButton = styled.button`
+	padding: 6px 12px;
+	background-color: #5aac44;
+	border-radius: 3px;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	text-align: center;
+`;
+
+export const NewItemInput = styled.input`
+	border-radius: 3px;
+	border: none;
+	box-shadow: #091e4240 0px 1px 0px 0px;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem 1rem;
+	width: 100%;
 `;

@@ -24,7 +24,7 @@
 				"tsx": "never"
 			}
 		],
-		"arrow-body-style": ["error", "always"],
+		"arrow-body-style": 0,
 		"no-unused-vars": "off",
 		"react/function-component-definition": "off",
 		"react/jsx-indent": [0],
