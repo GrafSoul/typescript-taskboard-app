@@ -1,8 +1,9 @@
 // Core
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 // Hook
 import { useAppState } from 'state/AppStateContext';
+import { useItemDrag } from 'utils/useItemDrag';
 
 // Component
 import { AddNewItem } from 'AddNewItem';
@@ -22,8 +23,13 @@ type ColumnProps = {
 export const Column: FC<ColumnProps> = ({ text, id }) => {
 	const { getTasksByListId, dispatch } = useAppState();
 	const tasks = getTasksByListId(id);
+	const ref = useRef<HTMLDivElement>(null);
+
+	const { drag } = useItemDrag({ type: 'COLUMN', id, text });
+	drag(ref);
+
 	return (
-		<ColumnContainer>
+		<ColumnContainer ref={ref}>
 			<ColumnTitle>{text}</ColumnTitle>
 			{tasks.map(task => (
 				<Card text={task.text} key={task.id} id={task.id} />
