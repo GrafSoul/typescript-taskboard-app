@@ -1,24 +1,24 @@
-import express from "express"
-import cors from 'cors'
-import bodyParser from 'body-parser'
+/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies */
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
-const app = express()
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const port = 4000
+const port = 4000;
 
-let lists:any[] = [];
+let lists: any[] = [];
 
-app.post("/save", (req, res) => {
-  console.log(req.body)
-  lists = req.body.lists
-  return res.json({ success: true })
-})
+app.post('/save', (req, res) => {
+	console.log(req.body);
+	lists = req.body.lists;
+	return res.json({ success: true });
+});
 
-app.get("/load", (req, res) => res.json({ lists }))
+app.get('/load', (req, res) => res.json({ lists }));
 
-app.listen(port, () =>
-  console.log(`Kanban backend running on http://localhost:${port}!`)
-)
+app.listen(port, () => console.log(`Kanban backend running on http://localhost:${port}!`));
